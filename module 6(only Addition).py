@@ -3,5 +3,5 @@ n=int(input("Enter number of elements: "))
 for i in range(n):
     num=int(input("Enter numbers: "))
     list.append(num)
-print("Sum of elements is: ",sum(list))
+print("Sum of numbers is: ",sum(list))
     
