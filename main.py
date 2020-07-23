@@ -48,6 +48,7 @@ def unit_convert():
   print("5) USD to INR")
   print()
   print("6) Quit")
+  print()
   selection=int(input("Enter Choice number: "))
   if selection==1:
     metric()
@@ -75,7 +76,8 @@ def unit_convert():
 import math
 def quadratic():
     #input
-  a,b,c = map(int,input("Enter a,b,c :").split())
+  a,b,c = map(int,input("Enter coefficients a,b,c with spaces between each coefficent:").split())
+  print()
     
     #discriminant
   D = ((b**2)-(4*a*c))
@@ -114,18 +116,18 @@ def quadratic():
 def largest():
   list = []
   n = 0
-  n = int(input("Enter the number of elements : "))
-  print("Enter the elements")
+  n = int(input("Enter the number of elements: "))
+  print("Enter the elements: ")
   for i in range(0,n):
     while True :
       try:
         list.append(int(input()))
         break
       except:
-        print("only numbers are allowed please enter a number :")
-
+        print("only numbers are allowed please enter a number: ")
+  print()
   print(list)
-  print("Largest Element :")
+  print("Largest Element: ")
   print(max(list))
   main()
 
@@ -213,15 +215,21 @@ def basic_math():
   list = []
   n = int(input("Enter number of elements: "))
   for i in range(n):
-    num = int(input("Enter numbers: "))
-    list.append(num)
+    while True:
+      try:
+        num = int(input("Enter numbers: "))
+        list.append(num)
+        break
+      except:
+        print("This input was not numerical, please try again with a number")
+  print()
   print("What you want to perform?")
   print("1) Addition")
   print("2) Subtraction")
   print("3) Multiplication")
   print("4) Main menu")
   opt = int(input("Enter option number:"))
-  
+  print()
   if opt == 1:
     print("Sum of numbers is: ",sum(list))
     basic_math()
@@ -252,6 +260,7 @@ def basic_math():
 def divisible():
   number = int(input("\nenter a number: "))
   divisor = int(input("\nenter a divisor: "))
+  print()
   if number % divisor == 0:
     print(str(number) + " is divisible by " + str(divisor))
     main()
@@ -264,6 +273,7 @@ def divisible():
 # 8) ARMSTRONG FUNCTION
 def armstrong():
   number = int(input("\nenter a number: "))
+  print()
   digits = [int(x) for x in str(number)]
   sum = 0
   for digit in digits:
