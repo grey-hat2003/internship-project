@@ -6,11 +6,63 @@ def decimal():
     n = int(input("Enter your choice : "))
     number = int(input("Enter the Decimal number to be converted : " ))
     if n == 1 :
-        print("Converstion to binary is ", bin(number))
+        list = []
+        while number >= 1:
+            remainder = number % 2
+            number = number // 2
+            list.append(remainder)
+        prefix ='0b'
+        list.append(prefix)
+        list.reverse()
+        binary = ''
+        for element in list:
+            binary += str(element)
+        print("Converstion to binary is ",binary)
     elif n == 2 :
-        print("Converstion to octal is ",oct(number))
+        list = []
+        while number >= 1:
+            remainder = number % 8
+            number = number // 8
+            list.append(remainder)
+        prefix = '0o'
+        list.append(prefix)
+        list.reverse()
+        octal = ''
+        for element in list:
+            octal += str(element)
+        print("Converstion to octal is ", octal)
     elif n == 3 :
-        print("Converstion to hexadecimal is ",hex(number))
+        list = []
+        while number >= 1:
+            remainder = number % 16
+            number = number // 16
+            if remainder == 10:
+                remainder = 'A'
+                list.append(remainder)
+            elif remainder == 11 :
+                remainder = 'B'
+                list.append(remainder)
+            elif remainder == 12 :
+                remainder = 'C'
+                list.append(remainder)
+            elif remainder == 13 :
+                remainder = 'D'
+                list.append(remainder)
+            elif remainder == 14 :
+                remainder = 'E'
+                list.append(remainder)
+            elif remainder == 15 :
+                remainder = 'F'
+                list.append(remainder)
+            else:
+                list.append(remainder)
+        prefix = '0x'
+        list.append(prefix)
+        list.reverse()
+        octal = ''
+        for element in list:
+            octal += str(element)
+        print("Converstion to Hexadecimal is ", octal)
     else :
         print("invalid choice ")
 
