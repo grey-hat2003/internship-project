@@ -1,5 +1,11 @@
+def time():
+    import datetime
+    now=datetime.datetime.now()
+    print(now.strftime("%d-%m-%y %H:%M:%S"))
 # 1) UNIT CONVERTER FUNCTION
 def unit_convert():
+  time()
+  print()
   def metric():
     km=float(input("Enter units in Kilometers: "))
     miles=km/1.609
@@ -75,6 +81,8 @@ def unit_convert():
 # 2) QUADRATIC FUNCTION
 import math
 def quadratic():
+  time()
+  print()
     #input
   a,b,c = map(int,input("Enter coefficients a,b,c with spaces between each coefficent:").split())
   print()
@@ -114,6 +122,8 @@ def quadratic():
 
 # 3) LARGEST NUMBER FUNCTION
 def largest():
+  time()
+  print()
   list = []
   n = 0
   n = int(input("Enter the number of elements: "))
@@ -137,6 +147,8 @@ def largest():
 
 # 4) MULTIPICATION TABLE FUNCTION
 def mult_tab():
+  time()
+  print()
   num = int (input("\nmultiplication table of: "))
   integer = int (input("\nexpected till: "))
   for x in range (1, integer+1):
@@ -149,6 +161,8 @@ def mult_tab():
 
 # 5) NUMBER SYSTEM CONVERTER FUNCTION
 def num_convert():
+  time()
+  print()
   print("Convert from : 1) Decimal to Octal, Binary, Hexadecimal")
   print("               2) Octal Binary, Hexadecimal to Decimal")
   print("               3) Main Menu")
@@ -212,6 +226,8 @@ def num_convert():
 
 # 6) BASIC MATH FUNCTION
 def basic_math():
+  time()
+  print()
   list = []
   n = int(input("Enter number of elements: "))
   for i in range(n):
@@ -258,6 +274,8 @@ def basic_math():
 
 # 7) DIVISIBILITY TEST FUNCTION
 def divisible():
+  time()
+  print()
   number = int(input("\nenter a number: "))
   divisor = int(input("\nenter a divisor: "))
   print()
@@ -272,6 +290,8 @@ def divisible():
 
 # 8) ARMSTRONG FUNCTION
 def armstrong():
+  time()
+  print()
   number = int(input("\nenter a number: "))
   print()
   digits = [int(x) for x in str(number)]
@@ -296,6 +316,7 @@ def main():
   print("---------------------------------------------------SOLVING MATH USING PYTHON-----------------------------------------------------")
   print()
   print("_________________________________________________________________________________________________________________________________")
+  time()
   print()
   print("         1) Unit converter")
   print()
