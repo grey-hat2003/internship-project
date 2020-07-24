@@ -59,10 +59,10 @@ def decimal():
         prefix = '0x'
         list.append(prefix)
         list.reverse()
-        octal = ''
+        hexadecimal = ''
         for element in list:
-            octal += str(element)
-        print("Converstion to Hexadecimal is ", octal)
+            hexadecimal += str(element)
+        print("Converstion to Hexadecimal is ", hexadecimal)
     else :
         print("invalid choice ")
 
