@@ -188,28 +188,6 @@ def num_convert():
   inpu = int(input("Enter your choice number: "))
 
   def decimal():
-    print("Convert Decimal to : \n")
-    print("1) Binary\n2) Octal\n3) Hexadecimal")
-    print()
-    
-    n = int(input("Enter your choice number: "))
-    print()
-    number = int(input("Enter the Decimal number to be converted : " ))
-    
-    if n == 1 :
-        print("Converstion to Binary is ", bin(number))
-        num_convert()
-    elif n == 2 :
-        print("Converstion to Octal is ",oct(number))
-        num_convert()
-    elif n == 3 :
-        print("Converstion to Hexadecimal is ",hex(number))
-        num_convert()
-    else :
-        print("!!!  INVALID INPUT, PLEASE TRY AGAIN  !!!")
-        num_convert()
-
-  def decimal():
     print("Convert to : \n")
     print("1.Binary\n2.Octal\n3.Hexadecimal")
     
