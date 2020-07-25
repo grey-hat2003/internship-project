@@ -3,36 +3,46 @@ inpu = int(input("Enter your choice : "))
 def decimal():
     print("Convert to : \n")
     print("1.Binary\n2.Octal\n3.Hexadecimal")
+    
     n = int(input("Enter your choice : "))
     number = int(input("Enter the Decimal number to be converted : " ))
+    
     if n == 1 :
         list = []
+        
         while number >= 1:
             remainder = number % 2
             number = number // 2
             list.append(remainder)
+       
         prefix ='0b'
         list.append(prefix)
         list.reverse()
         binary = ''
+        
         for element in list:
             binary += str(element)
         print("Converstion to binary is ",binary)
+    
     elif n == 2 :
         list = []
+        
         while number >= 1:
             remainder = number % 8
             number = number // 8
             list.append(remainder)
+        
         prefix = '0o'
         list.append(prefix)
         list.reverse()
         octal = ''
+        
         for element in list:
             octal += str(element)
         print("Converstion to octal is ", octal)
     elif n == 3 :
         list = []
+        
         while number >= 1:
             remainder = number % 16
             number = number // 16
@@ -56,13 +66,16 @@ def decimal():
                 list.append(remainder)
             else:
                 list.append(remainder)
+        
         prefix = '0x'
         list.append(prefix)
         list.reverse()
         hexadecimal = ''
+        
         for element in list:
             hexadecimal += str(element)
         print("Converstion to Hexadecimal is ", hexadecimal)
+    
     else :
         print("invalid choice ")
 

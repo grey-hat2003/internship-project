@@ -1,11 +1,17 @@
+# TIME N DATE FUNCTION
+
 def time():
     import datetime
     now=datetime.datetime.now()
     print(now.strftime("%d-%m-%y %H:%M:%S"))
+
+
+
 # 1) UNIT CONVERTER FUNCTION
 def unit_convert():
   time()
   print()
+  
   def metric():
     km=float(input("Enter units in Kilometers: "))
     miles=km/1.609
@@ -23,7 +29,7 @@ def unit_convert():
     main()
 
   def meter():
-    feet=float(input("Enter unit in Feets:"))
+    feet=float(input("Enter unit in Feets: "))
     meter=feet/3.281
     print(feet,"Feet converted to",format(meter, ".3f"),"Metre")
       
@@ -83,38 +89,43 @@ import math
 def quadratic():
   time()
   print()
-    #input
-  a,b,c = map(int,input("Enter coefficients a,b,c with spaces between each coefficent:").split())
-  print()
     
-    #discriminant
+ #input
+  a,b,c = map(int,input("Enter a,b,c : ").split())
+
+ #discriminant
   D = ((b**2)-(4*a*c))
+  
+  #for real and distinct roots
+  if a == 0 :
+    print("These are not quadratic coeeficients, try again")
+    quadratic()
     
-    #for real and distinct roots
-  if (D > 0) :
-    print ("Roots are real and distinct:")
-    print()
-    root1 = (-b + math.sqrt(D)) / (2*a)
-    root2 = (-b - math.sqrt(D)) / (2*a)
-    print("Root 1 = {:.3f} and Root 2 = {:.3f} ".format(root1,root2))
-    main()
-    
+  else:
+    if (D > 0) :
+      print ("Roots are real and distinct")
+      root1 = (-b + math.sqrt(D)) / (2*a)
+      root2 = (-b - math.sqrt(D)) / (2*a)
+      print("Root 1 = {:.3f} and root 2 = {:.3f} ".format(root1,root2))
+
+      main()
+        
     #for real and identical roots
-  elif D == 0 :
-    print("Roots are real and identical :")
-    print()
-    root1 = -b / (2*a)
-    print("Common Root = {:.3f}".format(root1))
-    main()
-    
+    elif D == 0 :
+      print("Roots are real and identical")
+      root1 = -b / (2*a)
+      print("Root = {:.3f}".format(root1))
+
+      main()
+  
     #for complex roots
-  elif D < 0 :
-    print("Roots are imaginary:")
-    print()
-    rootreal = -b/(2*a)
-    rootimg = math.sqrt(-D)/(2*a)
-    print("Root 1 = {:.3f} + {:.3f}i and Root 2 = {:.3f} - {:.3f}i".format(rootreal,rootimg,rootreal,rootimg))
-    main()
+    elif D < 0 :
+      print("Roots are imaginary")
+      rootreal = -b/(2*a)
+      rootimg = math.sqrt(-D)/(2*a)
+      print("Root 1 = {:.3f} + {:.3f}i and root 2 = {:.3f} - {:.3f}i".format(rootreal,rootimg,rootreal,rootimg))
+      
+      main()
 
 
 
@@ -124,10 +135,12 @@ def quadratic():
 def largest():
   time()
   print()
+  
   list = []
   n = 0
   n = int(input("Enter the number of elements: "))
   print("Enter the elements: ")
+  
   for i in range(0,n):
     while True :
       try:
@@ -135,6 +148,7 @@ def largest():
         break
       except:
         print("only numbers are allowed please enter a number: ")
+  
   print()
   print(list)
   print("Largest Element: ")
@@ -149,8 +163,10 @@ def largest():
 def mult_tab():
   time()
   print()
+  
   num = int (input("\nmultiplication table of: "))
   integer = int (input("\nexpected till: "))
+  
   for x in range (1, integer+1):
     print(("{} X {} = {}").format(num, x, num*x))
 
@@ -163,19 +179,23 @@ def mult_tab():
 def num_convert():
   time()
   print()
+  
   print("Convert from : 1) Decimal to Octal, Binary, Hexadecimal")
   print("               2) Octal Binary, Hexadecimal to Decimal")
   print("               3) Main Menu")
   print()
+  
   inpu = int(input("Enter your choice number: "))
 
   def decimal():
     print("Convert Decimal to : \n")
     print("1) Binary\n2) Octal\n3) Hexadecimal")
     print()
+    
     n = int(input("Enter your choice number: "))
     print()
     number = int(input("Enter the Decimal number to be converted : " ))
+    
     if n == 1 :
         print("Converstion to Binary is ", bin(number))
         num_convert()
@@ -189,12 +209,93 @@ def num_convert():
         print("!!!  INVALID INPUT, PLEASE TRY AGAIN  !!!")
         num_convert()
 
+  def decimal():
+    print("Convert to : \n")
+    print("1.Binary\n2.Octal\n3.Hexadecimal")
+    
+    n = int(input("Enter your choice : "))
+    number = int(input("Enter the decimal number to be converted : " ))
+    
+    if n == 1 :
+      list = []
+      
+      while number >= 1:
+        remainder = number % 2
+        number = number // 2
+        list.append(remainder)
+      
+      prefix ='0b'
+      list.append(prefix)
+      list.reverse()
+      binary = ''
+      
+      for element in list:
+        binary += str(element)
+      print("Converstion to binary is ",binary)
+    
+    elif n == 2 :
+      list = []
+      
+      while number >= 1:
+        remainder = number % 8
+        number = number // 8
+        list.append(remainder)
+      
+      prefix = '0o'
+      list.append(prefix)
+      list.reverse()
+      octal = ''
+      
+      for element in list:
+        octal += str(element)
+      print("Converstion to octal is ", octal)
+    
+    elif n == 3 :
+      list = []
+      
+      while number >= 1:
+        remainder = number % 16
+        number = number // 16
+        if remainder == 10:
+          remainder = 'A'
+          list.append(remainder)
+        elif remainder == 11 :
+          emainder = 'B'
+          list.append(remainder)
+        elif remainder == 12 :
+          remainder = 'C'
+          list.append(remainder)
+        elif remainder == 13 :
+          remainder = 'D'
+          list.append(remainder)
+        elif remainder == 14 :
+          remainder = 'E'
+          list.append(remainder)
+        elif remainder == 15 :
+          remainder = 'F'
+          list.append(remainder)
+        else:
+          list.append(remainder)
+        
+      prefix = '0x'
+      list.append(prefix)
+      list.reverse()
+      hexadecimal = ''
+    
+      for element in list:
+        hexadecimal += str(element)
+      print("Converstion to Hexadecimal is ", hexadecimal)
+    
+    else :
+      print("!!!  INVALID INPUT, PLEASE TRY AGAIN  !!!")
+      num_convert()
+
   def binary():
     print("Convert to Decimal from :\n")
     print("1) Binary\n2) Octal\n3) Hexadecimal")
     print()
     n = int(input("Enter yout choice number: "))
-    number = input("Enter the non-decimal number: ")
+    number = input("Enter the non-decimal number to be converted: ")
     if n == 1 :
         print("Converstion from Binary to Decimal is ",int(number,2))
         num_convert()
@@ -228,6 +329,7 @@ def num_convert():
 def basic_math():
   time()
   print()
+  
   list = []
   n = int(input("Enter number of elements: "))
   for i in range(n):
@@ -243,8 +345,9 @@ def basic_math():
   print("1) Addition")
   print("2) Subtraction")
   print("3) Multiplication")
-  print("4) Main menu")
-  opt = int(input("Enter option number:"))
+  print("4) Total count")
+  print("5) Main menu")
+  opt = int(input("Enter option number: "))
   print()
   if opt == 1:
     print("Sum of numbers is: ",sum(list))
@@ -265,6 +368,12 @@ def basic_math():
     basic_math()
   
   elif opt == 4:
+    count = 0
+    for element in list:
+      count += 1
+    print("The total count of the elements in the list is {}".format(count))
+  
+  elif opt == 5:
     main()
   
   else:
