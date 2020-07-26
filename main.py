@@ -308,48 +308,59 @@ def basic_math():
   time()
   print()
   
-  list = []
+  list1 = []
   n = int(input("Enter number of elements: "))
   for i in range(n):
     while True:
       try:
         num = int(input("Enter numbers: "))
-        list.append(num)
+        list1.append(num)
         break
       except:
-        print("This input was not numerical, please try again with a number")
+        print("That input was not numerical, please try again with a number")
   print()
   print("What you want to perform?")
   print("1) Addition")
   print("2) Subtraction")
   print("3) Multiplication")
-  print("4) Total count")
+  print("4) Subtraction with 2 lists")
   print("5) Main menu")
   opt = int(input("Enter option number: "))
   print()
   if opt == 1:
-    print("Sum of numbers is: ",sum(list))
+    print("Sum of numbers is: ",sum(list1))
     basic_math()
   
   elif opt == 2:
     diff = 0
-    for x in list:
+    for x in list1:
       diff -= x
-    print("Subtraction is {}".format(diff))
+    print(("Subtraction is {}").format(diff))
     basic_math()
   
   elif opt == 3:
     tot = 1
-    for x in list:
+    for x in list1:
       tot = tot*x
-    print("Multiplication is {}".format(tot)) 
+    print(("Multiplication is {}").format(tot)) 
     basic_math()
   
   elif opt == 4:
-    count = 0
-    for element in list:
-      count += 1
-    print("The total count of the elements in the list is {}".format(count))
+    list2 = []
+    result = []
+    print(("Enter {} elements").format(n))
+    for x in range(n):
+      while True:
+        try:
+          num = int(input("Enter numbers: "))
+          list2.append(num)
+          break
+        except:
+          print("That input was not numerical, please try again with a number")
+    result = [list1[i] - list2[i] for i in range(n)]
+    print(("The subtraction of the lists is {}").format(result))
+
+    basic_math()
   
   elif opt == 5:
     main()
