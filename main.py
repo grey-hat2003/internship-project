@@ -220,8 +220,8 @@ def num_convert():
         number = number // 2
         list.append(remainder)
       
-      prefix ='0b'
-      list.append(prefix)
+      #prefix ='0b'
+      #list.append(prefix)
       list.reverse()
       binary = ''
       
@@ -240,8 +240,8 @@ def num_convert():
         number = number // 8
         list.append(remainder)
       
-      prefix = '0o'
-      list.append(prefix)
+      #prefix = '0o'
+      #list.append(prefix)
       list.reverse()
       octal = ''
       
@@ -279,8 +279,8 @@ def num_convert():
         else:
           list.append(remainder)
         
-      prefix = '0x'
-      list.append(prefix)
+      #prefix = '0x'
+      #list.append(prefix)
       list.reverse()
       hexadecimal = ''
     
@@ -350,19 +350,94 @@ def num_convert():
 def basic_math():
   time()
   print()
+
+  def addition():
+    list1 = []
+    n = int(input("Enter number of elements: "))
+    print()
+    for i in range(n):
+      while True:
+        try:
+          num = int(input("Enter number: "))
+          list1.append(num)
+          break
+        except:
+          print("That input was not numerical, please try again with a number")
+    print("Sum of numbers is: ",sum(list1))
+    print()
+    basic_math()
+
+  def difference():
+    list1 = []
+    diff = 0
+    n = int(input("Enter number of elements: "))
+    print()
+    for i in range(n):
+      while True:
+        try:
+          num = int(input("Enter number: "))
+          list1.append(num)
+          break
+        except:
+          print("That input was not numerical, please try again with a number")
+    for x in list1:
+      diff -= x
+    print(("Subtraction is {}").format(diff))
+    print() 
+    basic_math()
+
+  def multiplication():
+    list1 = []
+    tot = 1
+    n = int(input("Enter number of elements: "))
+    print()
+    for i in range(n):
+      while True:
+        try:
+          num = int(input("Enter number: ")) 
+          list1.append(num)
+          break
+        except:
+          print("That input was not numerical, please try again with a number")
+    for x in list1:
+      tot = tot*x
+    print(("Multiplication is {}").format(tot)) 
+    print()
+    basic_math()
+
+  def difference2():
+    list1 = []
+    list2 = []
+    result = []
   
-  list1 = []
-  n = int(input("Enter number of elements: "))
-  print()
-  for i in range(n):
-    while True:
-      try:
-        num = int(input("Enter number: "))
-        list1.append(num)
-        break
-      except:
-        print("That input was not numerical, please try again with a number")
-  print()
+    n = int(input("Enter number of elements: "))
+    print()
+  
+    for i in range(n):
+      while True:
+        try:
+          num = int(input("Enter number: "))
+          list1.append(num)
+          break
+        except:
+          print("That input was not numerical, please try again with a number")
+  
+    print(("Enter {} elements for 2nd list").format(n))
+    for x in range(n):
+      while True:
+        try:
+          num = int(input("Enter number: "))
+          list2.append(num)
+          break
+        except:
+          print("That input was not numerical, please try again with a number")
+  
+    result = [list1[i] - list2[i] for i in range(n)]
+    print(("The subtraction of the lists is {}").format(result))
+    print()
+    basic_math()
+
+  
   print("What you want to perform?")
   print("1) Addition")
   print("2) Subtraction")
@@ -375,42 +450,16 @@ def basic_math():
   print()
   
   if opt == 1:
-    print("Sum of numbers is: ",sum(list1))
-    print()
-    basic_math()
+    addition()
   
   elif opt == 2:
-    diff = 0
-    for x in list1:
-      diff -= x
-    print(("Subtraction is {}").format(diff))
-    print()
-    basic_math()
+    difference()
   
   elif opt == 3:
-    tot = 1
-    for x in list1:
-      tot = tot*x
-    print(("Multiplication is {}").format(tot)) 
-    print()
-    basic_math()
+    multiplication()
   
   elif opt == 4:
-    list2 = []
-    result = []
-    print(("Enter {} elements").format(n))
-    for x in range(n):
-      while True:
-        try:
-          num = int(input("Enter number: "))
-          list2.append(num)
-          break
-        except:
-          print("That input was not numerical, please try again with a number")
-    result = [list1[i] - list2[i] for i in range(n)]
-    print(("The subtraction of the lists is {}").format(result))
-    print()
-    basic_math()
+    difference2()
   
   elif opt == 5:
     print()
