@@ -17,7 +17,8 @@ def unit_convert():
     miles=km/1.609
     print(km,"km converted to",\
     format(miles,".3f"),"Miles")
-      
+    
+    print()
     main()
 
   def temp():
@@ -25,28 +26,32 @@ def unit_convert():
     fah= (cel*(9/5)+32)
     print(cel,"Celsius converted to",\
     format(fah,".1f"),"Fahrenheit")
-      
+    
+    print() 
     main()
 
   def meter():
     feet=float(input("Enter unit in Feets: "))
     meter=feet/3.281
     print(feet,"Feet converted to",format(meter, ".3f"),"Metre")
-      
+    
+    print() 
     main()
 
   def kg():
     pound=float(input("Enter units in Pounds: "))
     kg=pound/2.205
     print(pound,"Pound converted to",format(kg,".3f"),"Kilograms")
-      
+    
+    print()
     main()
 
   def currency():
     USD=float(input("Enter units in USD($): "))
     INR=USD*74.77
     print(USD,"USD converted to", format(INR,"0.2f"),"INR")
-
+    
+    print()
     main()
   
   print("1) Kilometers to Miles")
@@ -76,9 +81,10 @@ def unit_convert():
     exit()
   else:
     print("!!!  INVALID INPUT, PLEASE TRY AGAIN  !!!")
+    
+    print()
     unit_convert()
-      
-    main()
+
 
 
 
@@ -99,6 +105,7 @@ def quadratic():
   #for real and distinct roots
   if a == 0 :
     print("These are not quadratic coeeficients, try again")
+    print()
     quadratic()
     
   else:
@@ -107,7 +114,8 @@ def quadratic():
       root1 = (-b + math.sqrt(D)) / (2*a)
       root2 = (-b - math.sqrt(D)) / (2*a)
       print("Root 1 = {:.3f} and root 2 = {:.3f} ".format(root1,root2))
-
+      
+      print()
       main()
         
     #for real and identical roots
@@ -115,7 +123,8 @@ def quadratic():
       print("Roots are real and identical")
       root1 = -b / (2*a)
       print("Root = {:.3f}".format(root1))
-
+      
+      print()
       main()
   
     #for complex roots
@@ -125,6 +134,7 @@ def quadratic():
       rootimg = math.sqrt(-D)/(2*a)
       print("Root 1 = {:.3f} + {:.3f}i and root 2 = {:.3f} - {:.3f}i".format(rootreal,rootimg,rootreal,rootimg))
       
+      print()
       main()
 
 
@@ -151,8 +161,11 @@ def largest():
   
   print()
   print(list)
+  print()
   print("Largest Element: ")
   print(max(list))
+  
+  print()
   main()
 
 
@@ -166,10 +179,12 @@ def mult_tab():
   
   num = int (input("\nmultiplication table of: "))
   integer = int (input("\nexpected till: "))
+  print()
   
   for x in range (1, integer+1):
     print(("{} X {} = {}").format(num, x, num*x))
-
+  
+  print()
   main()
 
 
@@ -190,8 +205,10 @@ def num_convert():
   def decimal():
     print("Convert to : \n")
     print("1.Binary\n2.Octal\n3.Hexadecimal")
+    print()
     
     n = int(input("Enter your choice : "))
+    print()
     number = int(input("Enter the decimal number to be converted : " ))
     
     if n == 1 :
@@ -210,6 +227,9 @@ def num_convert():
       for element in list:
         binary += str(element)
       print("Converstion to binary is ",binary)
+      
+      print()
+      num_convert()
     
     elif n == 2 :
       list = []
@@ -227,6 +247,9 @@ def num_convert():
       for element in list:
         octal += str(element)
       print("Converstion to octal is ", octal)
+
+      print()
+      num_convert()
     
     elif n == 3 :
       list = []
@@ -263,38 +286,57 @@ def num_convert():
       for element in list:
         hexadecimal += str(element)
       print("Converstion to Hexadecimal is ", hexadecimal)
+
+      print()
+      num_convert()
     
     else :
       print("!!!  INVALID INPUT, PLEASE TRY AGAIN  !!!")
+
+      print()
       num_convert()
 
   def binary():
     print("Convert to Decimal from :\n")
     print("1) Binary\n2) Octal\n3) Hexadecimal")
     print()
+    
     n = int(input("Enter yout choice number: "))
+    print()
     number = input("Enter the non-decimal number to be converted: ")
+    
     if n == 1 :
         print("Converstion from Binary to Decimal is ",int(number,2))
+        print()
         num_convert()
+    
     elif n == 2 :
         print("Conerstion from Octal to Decimal is ",int(number,8))
+        print()
         num_convert()
+    
     elif n == 3 :
         print("Converstion from Hexadecimal to Decimal is ",int(number,16))
+        print()
         num_convert()
+    
     else :
         print("!!!  INVALID INPUT, PLEASE TRY AGAIN  !!!")
+        print()
         num_convert()
 
   if inpu == 1:
+    print()
     decimal()
   elif inpu == 2:
+    print()
     binary()
   elif inpu == 3:
+    print()
     main()
   else :
     print("!!!  INVALID INPUT, PLEASE TRY AGAIN  !!!")
+    print()
     num_convert()
 
     
@@ -310,10 +352,11 @@ def basic_math():
   
   list1 = []
   n = int(input("Enter number of elements: "))
+  print()
   for i in range(n):
     while True:
       try:
-        num = int(input("Enter numbers: "))
+        num = int(input("Enter number: "))
         list1.append(num)
         break
       except:
@@ -325,10 +368,14 @@ def basic_math():
   print("3) Multiplication")
   print("4) Subtraction with 2 lists")
   print("5) Main menu")
+  print()
+  
   opt = int(input("Enter option number: "))
   print()
+  
   if opt == 1:
     print("Sum of numbers is: ",sum(list1))
+    print()
     basic_math()
   
   elif opt == 2:
@@ -336,6 +383,7 @@ def basic_math():
     for x in list1:
       diff -= x
     print(("Subtraction is {}").format(diff))
+    print()
     basic_math()
   
   elif opt == 3:
@@ -343,6 +391,7 @@ def basic_math():
     for x in list1:
       tot = tot*x
     print(("Multiplication is {}").format(tot)) 
+    print()
     basic_math()
   
   elif opt == 4:
@@ -352,21 +401,24 @@ def basic_math():
     for x in range(n):
       while True:
         try:
-          num = int(input("Enter numbers: "))
+          num = int(input("Enter number: "))
           list2.append(num)
           break
         except:
           print("That input was not numerical, please try again with a number")
     result = [list1[i] - list2[i] for i in range(n)]
     print(("The subtraction of the lists is {}").format(result))
-
+    print()
     basic_math()
   
   elif opt == 5:
+    print()
     main()
   
   else:
     print("!!!  INVALID INPUT, PLEASE TRY AGAIN  !!!")
+    print()
+    basic_math()
 
  
 
@@ -379,9 +431,11 @@ def divisible():
   print()
   if number % divisor == 0:
     print(str(number) + " is divisible by " + str(divisor))
+    print()
     main()
   else:
     print(str(number) + " is not divisible by " + str(divisor))
+    print()
     main()
 
 
@@ -394,6 +448,7 @@ def armstrong():
   print()
   if number<0:
     print("That's a negative number, try again")
+    print()
     armstrong()
   digits = [int(x) for x in str(number)]
   sum = 0
@@ -401,8 +456,10 @@ def armstrong():
     sum += digit**3
   if number == sum:
     print(str(number) + " is an armstrong number ")
+    print()
   else:
     print(str(number) + " is not an armstrong number ")
+    print()
 
   main()
 
