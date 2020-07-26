@@ -392,6 +392,9 @@ def armstrong():
   print()
   number = int(input("\nenter a number: "))
   print()
+  if number<0:
+    print("That's a negative number, try again")
+    armstrong()
   digits = [int(x) for x in str(number)]
   sum = 0
   for digit in digits:
