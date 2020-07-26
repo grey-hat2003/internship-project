@@ -64,7 +64,7 @@ def unit_convert():
   print()
   print("5) USD to INR")
   print()
-  print("6) Quit")
+  print("6) Main menu")
   print()
   selection=int(input("Enter Choice number: "))
   if selection==1:
@@ -78,7 +78,8 @@ def unit_convert():
   elif selection==5:
     currency()
   elif selection==6:
-    exit()
+    print()
+    main()
   else:
     print("!!!  INVALID INPUT, PLEASE TRY AGAIN  !!!")
     
