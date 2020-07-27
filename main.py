@@ -210,9 +210,9 @@ def num_convert():
     
     n = int(input("Enter your choice : "))
     print()
-    number = int(input("Enter the decimal number to be converted : " ))
     
     if n == 1 :
+      number = int(input("Enter the decimal number to be converted : " ))
       list = []
       
       while number >= 1:
@@ -220,19 +220,18 @@ def num_convert():
         number = number // 2
         list.append(remainder)
       
-      #prefix ='0b'
-      #list.append(prefix)
       list.reverse()
       binary = ''
       
       for element in list:
         binary += str(element)
-      print("Converstion to binary is ",binary)
+      print("Conversion to binary is ",binary)
       
       print()
       num_convert()
     
     elif n == 2 :
+      number = int(input("Enter the decimal number to be converted : " ))
       list = []
       
       while number >= 1:
@@ -240,19 +239,18 @@ def num_convert():
         number = number // 8
         list.append(remainder)
       
-      #prefix = '0o'
-      #list.append(prefix)
       list.reverse()
       octal = ''
       
       for element in list:
         octal += str(element)
-      print("Converstion to octal is ", octal)
+      print("Conversion to octal is ", octal)
 
       print()
       num_convert()
     
     elif n == 3 :
+      number = int(input("Enter the decimal number to be converted : " ))
       list = []
       
       while number >= 1:
@@ -279,14 +277,12 @@ def num_convert():
         else:
           list.append(remainder)
         
-      #prefix = '0x'
-      #list.append(prefix)
       list.reverse()
       hexadecimal = ''
     
       for element in list:
         hexadecimal += str(element)
-      print("Converstion to Hexadecimal is ", hexadecimal)
+      print("Conversion to Hexadecimal is ", hexadecimal)
 
       print()
       num_convert()
@@ -302,22 +298,27 @@ def num_convert():
     print("1) Binary\n2) Octal\n3) Hexadecimal")
     print()
     
-    n = int(input("Enter yout choice number: "))
+    n = int(input("Enter your choice number: "))
     print()
-    number = input("Enter the non-decimal number to be converted: ")
     
     if n == 1 :
-        print("Converstion from Binary to Decimal is ",int(number,2))
+        number = input("Enter the non-decimal number to be converted: ")
+        
+        print("Conversion from Binary to Decimal is ",int(number,2))
         print()
         num_convert()
     
     elif n == 2 :
-        print("Conerstion from Octal to Decimal is ",int(number,8))
+        number = input("Enter the non-decimal number to be converted: ")
+        
+        print("Conversion from Octal to Decimal is ",int(number,8))
         print()
         num_convert()
     
     elif n == 3 :
-        print("Converstion from Hexadecimal to Decimal is ",int(number,16))
+        number = input("Enter the non-decimal number to be converted: ")
+        
+        print("Conversion from Hexadecimal to Decimal is ",int(number,16))
         print()
         num_convert()
     
