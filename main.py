@@ -98,14 +98,14 @@ def quadratic():
   print()
     
  #input
-  a,b,c = map(int,input("Enter a,b,c : ").split())
+  a,b,c = map(int,input("Enter coefficients a,b,c : ").split())
 
  #discriminant
   D = ((b**2)-(4*a*c))
   
   #for real and distinct roots
   if a == 0 :
-    print("These are not quadratic coeeficients, try again")
+    print("These are not quadratic coeficients, try again")
     print()
     quadratic()
     
@@ -260,7 +260,7 @@ def num_convert():
           remainder = 'A'
           list.append(remainder)
         elif remainder == 11 :
-          emainder = 'B'
+          remainder = 'B'
           list.append(remainder)
         elif remainder == 12 :
           remainder = 'C'
