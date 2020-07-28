@@ -181,7 +181,14 @@ def largest():
   
   list = []
   n = 0
-  n = int(input("Enter the number of elements: "))
+
+  try:
+    n = int(input("Enter the number of elements: "))
+  except:
+    print("Please enter a numerical input")
+    print()
+    largest()
+
   print("Enter the elements: ")
   
   for i in range(0,n):
@@ -244,16 +251,18 @@ def num_convert():
     print("1.Binary\n2.Octal\n3.Hexadecimal")
     print()
     
-    try:
-      n = int(input("Enter your choice : "))
-      print()
-    except:
-      print("That input wasn't numerical please try again")
-      print()
-      decimal()
+    
+    n = int(input("Enter your choice : "))
+    print()
     
     if n == 1 :
-      number = int(input("Enter the decimal number to be converted : " ))
+      try: 
+        number = int(input("Enter the decimal number to be converted : " ))
+      except:
+        print("Please input numbers only")
+        print()
+        decimal()
+      
       list = []
       
       while number >= 1:
@@ -272,7 +281,13 @@ def num_convert():
       num_convert()
     
     elif n == 2 :
-      number = int(input("Enter the decimal number to be converted : " ))
+      try:
+        number = int(input("Enter the decimal number to be converted : " ))
+      except:
+        print("Please input numbers only")
+        print()
+        decimal()
+      
       list = []
       
       while number >= 1:
@@ -291,7 +306,13 @@ def num_convert():
       num_convert()
     
     elif n == 3 :
-      number = int(input("Enter the decimal number to be converted : " ))
+      try:
+        number = int(input("Enter the decimal number to be converted : " ))
+      except:
+        print("Please input numbers only")
+        print()
+        decimal()
+        
       list = []
       
       while number >= 1:
