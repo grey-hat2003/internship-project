@@ -49,8 +49,8 @@ def unit_convert():
       print("That input wasn't numerical please try again")
       print()
       meter()
-    meter=feet/3.281
-    print(feet,"Feet converted to",format(meter, ".3f"),"Metre")
+    meters=feet/3.281
+    print(feet,"Feet converted to",format(meters, ".3f"),"Metre")
     
     print() 
     main()
@@ -62,8 +62,8 @@ def unit_convert():
       print("That input wasn't numerical please try again")
       print()
       kg()
-    kg=pound/2.205
-    print(pound,"Pound converted to",format(kg,".3f"),"Kilograms")
+    kgs = pound/2.205
+    print(pound,"Pound converted to",format(kgs,".3f"),"Kilograms")
     
     print()
     main()
@@ -312,7 +312,7 @@ def num_convert():
         print("Please input numbers only")
         print()
         decimal()
-        
+
       list = []
       
       while number >= 1:
