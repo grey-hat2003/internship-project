@@ -13,7 +13,14 @@ def unit_convert():
   print()
   
   def metric():
-    km=float(input("Enter units in Kilometers: "))
+    try:
+      km=float(input("Enter units in Kilometers: "))
+    except:
+      print("That input wasn't numerical please try again")
+      print()
+      metric()
+      
+    print("")
     miles=km/1.609
     print(km,"km converted to",\
     format(miles,".3f"),"Miles")
@@ -22,7 +29,12 @@ def unit_convert():
     main()
 
   def temp():
-    cel=float(input("Enter temperature in Celsius: "))
+    try:
+      cel=float(input("Enter temperature in Celsius: "))
+    except:
+      print("That input wasn't numerical please try again")
+      print()
+      temp()
     fah= (cel*(9/5)+32)
     print(cel,"Celsius converted to",\
     format(fah,".1f"),"Fahrenheit")
@@ -31,7 +43,12 @@ def unit_convert():
     main()
 
   def meter():
-    feet=float(input("Enter unit in Feets: "))
+    try:
+      feet=float(input("Enter unit in Feets: "))
+    except:
+      print("That input wasn't numerical please try again")
+      print()
+      meter()
     meter=feet/3.281
     print(feet,"Feet converted to",format(meter, ".3f"),"Metre")
     
@@ -39,7 +56,12 @@ def unit_convert():
     main()
 
   def kg():
-    pound=float(input("Enter units in Pounds: "))
+    try:
+      pound=float(input("Enter units in Pounds: "))
+    except:
+      print("That input wasn't numerical please try again")
+      print()
+      kg()
     kg=pound/2.205
     print(pound,"Pound converted to",format(kg,".3f"),"Kilograms")
     
@@ -47,7 +69,12 @@ def unit_convert():
     main()
 
   def currency():
-    USD=float(input("Enter units in USD($): "))
+    try:
+      USD=float(input("Enter units in USD($): "))
+    except:
+      print("That input wasn't numerical please try again")
+      print()
+      currency()
     INR=USD*74.77
     print(USD,"USD converted to", format(INR,"0.2f"),"INR")
     
@@ -98,7 +125,12 @@ def quadratic():
   print()
     
  #input
-  a,b,c = map(int,input("Enter coefficients a,b,c : ").split())
+  try:
+    a,b,c = map(int,input("Enter coefficients a,b,c : ").split())
+  except:
+    print("That input wasn't numerical please try again")
+    print()
+    quadratic()
 
  #discriminant
   D = ((b**2)-(4*a*c))
@@ -178,10 +210,14 @@ def mult_tab():
   time()
   print()
   
-  num = int (input("\nmultiplication table of: "))
-  integer = int (input("\nexpected till: "))
-  print()
-  
+  try:
+    num = int (input("\nmultiplication table of: "))
+    integer = int (input("\nexpected till: "))
+    print()
+  except:
+    print("That input wasn't numerical please try again")
+    print()
+    mult_tab()
   for x in range (1, integer+1):
     print(("{} X {} = {}").format(num, x, num*x))
   
@@ -208,8 +244,13 @@ def num_convert():
     print("1.Binary\n2.Octal\n3.Hexadecimal")
     print()
     
-    n = int(input("Enter your choice : "))
-    print()
+    try:
+      n = int(input("Enter your choice : "))
+      print()
+    except:
+      print("That input wasn't numerical please try again")
+      print()
+      decimal()
     
     if n == 1 :
       number = int(input("Enter the decimal number to be converted : " ))
@@ -354,8 +395,14 @@ def basic_math():
 
   def addition():
     list1 = []
-    n = int(input("Enter number of elements: "))
-    print()
+    try:
+      n = int(input("Enter number of elements: "))
+      print()
+    except:
+      print("Please enter numerical input")
+      print()
+      addition()
+    
     for i in range(n):
       while True:
         try:
@@ -371,8 +418,15 @@ def basic_math():
   def difference():
     list1 = []
     diff = 0
-    n = int(input("Enter number of elements: "))
-    print()
+
+    try:
+      n = int(input("Enter number of elements: "))
+      print()
+    except:
+      print("Please enter numerical input")
+      print()
+      difference()
+
     for i in range(n):
       while True:
         try:
@@ -381,6 +435,7 @@ def basic_math():
           break
         except:
           print("That input was not numerical, please try again with a number")
+    
     for x in list1:
       diff -= x
     print(("Subtraction is {}").format(diff))
@@ -390,8 +445,14 @@ def basic_math():
   def multiplication():
     list1 = []
     tot = 1
-    n = int(input("Enter number of elements: "))
-    print()
+    try:
+      n = int(input("Enter number of elements: "))
+      print()
+    except:
+      print("Please enter numerical input")
+      print()
+      multiplication()
+  
     for i in range(n):
       while True:
         try:
@@ -410,9 +471,14 @@ def basic_math():
     list1 = []
     list2 = []
     result = []
-  
-    n = int(input("Enter number of elements: "))
-    print()
+    
+    try:
+      n = int(input("Enter number of elements: "))
+      print()
+    except:
+      print("Please enter numerical input")
+      print()
+      difference2()
   
     for i in range(n):
       while True:
@@ -477,8 +543,13 @@ def basic_math():
 def divisible():
   time()
   print()
-  number = int(input("\nenter a number: "))
-  divisor = int(input("\nenter a divisor: "))
+  try:
+    number = int(input("\nenter a number: "))
+    divisor = int(input("\nenter a divisor: "))
+  except:
+    print("That input was not numerical, please try again with a number")
+    print()
+    divisible()
   print()
   if number % divisor == 0:
     print(str(number) + " is divisible by " + str(divisor))
@@ -495,8 +566,13 @@ def divisible():
 def armstrong():
   time()
   print()
-  number = int(input("\nenter a number: "))
-  print()
+  try:
+    number = int(input("\nenter a number: "))
+    print()
+  except:
+    print("That input was not numeric, please try again")
+    print()
+    armstrong()
   if number<0:
     print("That's a negative number, try again")
     print()
