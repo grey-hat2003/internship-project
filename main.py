@@ -212,7 +212,7 @@ def largest():
 
 
 
-# 4) MULTIPICATION TABLE FUNCTION
+# 4) MULTIPLICATION TABLE FUNCTION
 def mult_tab():
   time()
   print()
@@ -225,6 +225,7 @@ def mult_tab():
     print("That input wasn't numerical please try again")
     print()
     mult_tab()
+  
   for x in range (1, integer+1):
     print(("{} X {} = {}").format(num, x, num*x))
   
@@ -594,14 +595,18 @@ def armstrong():
     print("That input was not numeric, please try again")
     print()
     armstrong()
+  
   if number<0:
     print("That's a negative number, try again")
     print()
     armstrong()
+  
   digits = [int(x) for x in str(number)]
   sum = 0
+  
   for digit in digits:
     sum += digit**3
+  
   if number == sum:
     print(str(number) + " is an armstrong number ")
     print()
